@@ -76,6 +76,7 @@
     <body>
 <?php
     var_dump($deck);
+    var_dump($table);
 ?>
     </body>
 </html>
