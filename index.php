@@ -39,3 +39,59 @@
 ?>
     </body>
 </html>
+
+<?php
+
+$deck = array();
+
+for ($i = 1; $i <= 52; $i++ ) {
+  
+  $deck[] = $i;
+  
+}
+
+//print_r($deck);
+shuffle($deck);
+echo "<hr>";
+print_r($deck);
+$card = array_pop($deck);
+echo $card;
+
+$suit = array("clubs", "diamonds", "hearts", "spades");
+$cardSuit = $suit[floor($card / 13)];
+$randomCard = rand(1,13);
+$cardValue = $card % 13;
+if ($cardValue == 0) {
+    $cardValue = 13;
+}
+echo "<img src=cards/$cardSuit/$cardValue.png>";
+
+
+
+$deck = array();
+for ($i =1; $i <=52; $i++){
+    $deck[] =$i;
+}
+ 
+shuffle($deck);
+echo "<hr>";
+print_r($deck);
+$card = array_pop($deck);
+echo $card;
+
+$suit = array("clubs", "diamonds", "hearts", "spades");
+$cardSuit = $suit[floor($card/13)];
+$randomCard = rand(1,13);
+$vardValues = $card % 13;
+
+if($cardValue==0){
+    $cardValue =13;
+}
+echo "<img src=cards/$cardSuit/$cardValue.png>"
+ 
+ ?>
+ 
+ 
+ 
+ 
+ 
