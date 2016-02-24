@@ -13,6 +13,7 @@
         $card["imageName"] = "/Labs/336-l3/assets/cards/" . $suitName . $i . ".png";
         $card["score"] = $i;
         $card["suit"] = $suitName;
+        array_push($deck, $card);
     }
 
     //clubs
@@ -21,6 +22,7 @@
         $card["imageName"] = "/Labs/336-l3/assets/cards/" . $suitName . $i . ".png";
         $card["score"] = $i;
         $card["suit"] = $suitName;
+        array_push($deck, $card);
     }
 
     //hearts
@@ -29,6 +31,7 @@
         $card["imageName"] = "/Labs/336-l3/assets/cards/" . $suitName . $i . ".png";
         $card["score"] = $i;
         $card["suit"] = $suitName;
+        array_push($deck, $card);
     }
 
     //spades
@@ -37,6 +40,7 @@
         $card["imageName"] = "/Labs/336-l3/assets/cards/" . $suitName . $i . ".png";
         $card["score"] = $i;
         $card["suit"] = $suitName;
+        array_push($deck, $card);
     }
 
 
