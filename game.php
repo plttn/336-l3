@@ -1,7 +1,7 @@
 <?php
     $card = ["imageName" => "",
             "score" => "",
-            "suit" => "",
+            "suit" => "",];
     //indexed array
 
 
@@ -71,7 +71,7 @@
     </head>
     <body>
 <?php
-    var_dump($table);
+    var_dump($deck);
 ?>
     </body>
 </html>
