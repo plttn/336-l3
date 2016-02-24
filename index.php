@@ -5,7 +5,7 @@
   </head>
   
   <body>
-    <form action="index.php" method="POST">
+    <form action="game.php" method="POST">
       <div>
         <label>Player 1:</label><input type="text" name="p1" />
       </div>
