@@ -1,19 +1,19 @@
 <?php 
-    $card = ["imageName" => "",
-            "score" => "",
-            "suit" => "",
-            "rank" => ""];
+    // $card = ["imageName" => "",
+    //         "score" => "",
+    //         "suit" => "",
+    //         "rank" => ""];
     //indexed array
     $deck = [];
 
     $player1 = ["imageName"=>"",
-                "name" => ""];
+                "name" => $_POST["p1"]];
     $player2 = ["imageName"=>"",
-                "name" => ""];
+                "name" => $_POST["p2"]];
     $player3 = ["imageName"=>"",
-                "name" => ""];
+                "name" => $_POST["p3"]];
     $player4 = ["imageName"=>"",
-                "name" => ""]; 
+                "name" => $_POST["p4"]];
                 
     $table = [$player1, $player2, $player3, $player4];
     
@@ -35,7 +35,7 @@
     </head>
     <body>
 <?php 
-
+    var_dump($table);
 ?>
     </body>
 </html>
