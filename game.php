@@ -1,4 +1,4 @@
-<?php 
+<?php
     $card = ["imageName" => "",
             "score" => "",
             "suit" => "",
@@ -13,19 +13,19 @@
     $player3 = ["imageName"=>"",
                 "name" => ""];
     $player4 = ["imageName"=>"",
-                "name" => ""]; 
-                
+                "name" => ""];
+
     $table = [$player1, $player2, $player3, $player4];
-    
+
     $hands = ["player" => null,
                 "cards" => [],
                 "score" => ""
             ];
-    
+
     $game = ["players" => $table,
             "hands" => [],
             ];
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@
         <title> </title>
     </head>
     <body>
-<?php 
+<?php
 
 ?>
     </body>
@@ -45,9 +45,9 @@
 $deck = array();
 
 for ($i = 1; $i <= 52; $i++ ) {
-  
+
   $deck[] = $i;
-  
+
 }
 
 //print_r($deck);
@@ -72,7 +72,7 @@ $deck = array();
 for ($i =1; $i <=52; $i++){
     $deck[] =$i;
 }
- 
+
 shuffle($deck);
 echo "<hr>";
 print_r($deck);
@@ -88,10 +88,5 @@ if($cardValue==0){
     $cardValue =13;
 }
 echo "<img src=cards/$cardSuit/$cardValue.png>"
- 
+
  ?>
- 
- 
- 
- 
- 
