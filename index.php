@@ -3,7 +3,7 @@
   <head>
     <title></title>
   </head>
-  
+
   <body>
     <form action="game.php" method="POST">
       <div>
@@ -18,7 +18,6 @@
       <div>
         <label>Player 4:</label><input type="text" name="p4" />
       </div>
-
       <input type="submit" name="GO!">
     </form>
   </body>

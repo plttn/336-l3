@@ -1,59 +1,19 @@
 <?php
     $card = ["imageName" => "",
             "score" => "",
-            "suit" => "",];
+            "suit" => "",
+            "rank" => ""];
     //indexed array
-
-
     $deck = [];
 
-    //diamonds
-    $suitName = "diamonds";
-    for ($i=1; $i <= 13; $i++) {
-        $card["imageName"] = "/Labs/336-l3/assets/cards/" . $suitName . $i . ".png";
-        $card["score"] = $i;
-        $card["suit"] = $suitName;
-        array_push($deck, $card);
-    }
-
-    //clubs
-    $suitName = "clubs";
-    for ($i=1; $i <= 13; $i++) {
-        $card["imageName"] = "/Labs/336-l3/assets/cards/" . $suitName . $i . ".png";
-        $card["score"] = $i;
-        $card["suit"] = $suitName;
-        array_push($deck, $card);
-    }
-
-    //hearts
-    $suitName = "hearts";
-    for ($i=1; $i <= 13; $i++) {
-        $card["imageName"] = "/Labs/336-l3/assets/cards/" . $suitName . $i . ".png";
-        $card["score"] = $i;
-        $card["suit"] = $suitName;
-        array_push($deck, $card);
-    }
-
-    //spades
-    $suitName = "spades";
-    for ($i=1; $i <= 13; $i++) {
-        $card["imageName"] = "/Labs/336-l3/assets/cards/" . $suitName . $i . ".png";
-        $card["score"] = $i;
-        $card["suit"] = $suitName;
-        array_push($deck, $card);
-    }
-
-
-
-
     $player1 = ["imageName"=>"",
-                "name" => $_POST["p1"]];
+                "name" => ""];
     $player2 = ["imageName"=>"",
-                "name" => $_POST["p2"]];
+                "name" => ""];
     $player3 = ["imageName"=>"",
-                "name" => $_POST["p3"]];
+                "name" => ""];
     $player4 = ["imageName"=>"",
-                "name" => $_POST["p4"]];
+                "name" => ""];
 
     $table = [$player1, $player2, $player3, $player4];
 
@@ -75,8 +35,57 @@
     </head>
     <body>
 <?php
-    var_dump($deck);
-    var_dump($table);
 ?>
     </body>
 </html>
+
+<?php
+
+$deck = array();
+
+for ($i = 1; $i <= 52; $i++ ) {
+
+  $deck[] = $i;
+
+}
+
+//print_r($deck);
+shuffle($deck);
+echo "<hr>";
+print_r($deck);
+$card = array_pop($deck);
+echo $card;
+
+$suit = array("clubs", "diamonds", "hearts", "spades");
+$cardSuit = $suit[floor($card / 13)];
+$randomCard = rand(1,13);
+$cardValue = $card % 13;
+if ($cardValue == 0) {
+    $cardValue = 13;
+}
+echo "<img src=cards/$cardSuit/$cardValue.png>";
+
+
+
+$deck = array();
+for ($i =1; $i <=52; $i++){
+    $deck[] =$i;
+}
+
+shuffle($deck);
+echo "<hr>";
+print_r($deck);
+$card = array_pop($deck);
+echo $card;
+
+$suit = array("clubs", "diamonds", "hearts", "spades");
+$cardSuit = $suit[floor($card/13)];
+$randomCard = rand(1,13);
+$vardValues = $card % 13;
+
+if($cardValue==0){
+    $cardValue =13;
+}
+echo "<img src=cards/$cardSuit/$cardValue.png>"
+
+ ?>
