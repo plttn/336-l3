@@ -88,6 +88,7 @@ function get_winner() {
   }
   $winnerKey = array_keys($playerArray, $winnerScore);
   var_dump($winnerKey);
+  return $winnerKey;
 }
 
 
