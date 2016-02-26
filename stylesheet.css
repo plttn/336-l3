@@ -1,0 +1,49 @@
+a:hover{
+    color: green;
+}
+h1 {
+    text-align:center;
+    color: black;
+    font-family: times;
+}
+h2 {
+    text-align:center;
+    color: black;
+    font-family: times;
+}
+
+h3 {
+    font-family: times;
+}
+
+
+#table {
+    text-align:center;
+    border: none;
+   /* margin-left:auto;*/
+}
+
+#bottom {
+    text-align: center;
+}
+
+.bold{
+    font-weight: bold;
+    color: black;
+}
+.color{
+    color: purple;
+}
+a:visited {
+    color: red;
+}
+
+body {
+  text-align: center;
+ }
+
+#page-wrap {
+  text-align: left;
+  width: 800px;
+  margin: 0 auto;
+}
