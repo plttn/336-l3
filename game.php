@@ -26,34 +26,73 @@ for ($i = 1; $i <= rand(4,6); $i++) {
   $player4hand[] = array_pop($deck);
 }
 
-var_dump($player1hand);
 
+function show_hand($playerNumber) {
 
-
-
-for ($i = 0; $i < count(${"player" . 1 . "hand"}); $i++) {
-    //prints the hand
+    global ${"player". $playerNumber . "hand"};
+    $currentPlayer = ${"player". $playerNumber . "hand"};
+    for ($i = 0; $i < count($currentPlayer); $i++) {
+        //prints the hand
+        $cardSuit;
     
-    $cardSuit;
+        $suits = array("clubs", "diamonds", "hearts", "spades");
+        
+        $cardSuitValue = floor($currentPlayer[$i]/13);
+        if (($currentPlayer[$i]/13) == floor($currentPlayer[$i]/13)) {
+            $cardSuitValue = $cardSuitValue - 1;
+        }
+        
+        $cardSuit = $suits[$cardSuitValue];
+        
+        $cardValue = $currentPlayer[$i] % 13;
+        if($cardValue==0){
+            $cardValue = 13;
+        }
+        
+        echo "<img src=assets/cards/". $cardSuit . "/" . $cardValue . ".png>";
+    }  
+}
 
-    $suits = array("clubs", "diamonds", "hearts", "spades");
+function get_score($playerNumber){
+    global ${"player". $playerNumber . "hand"};
+    $currentPlayer = ${"player". $playerNumber . "hand"};
+    $score = 0;
     
-    $cardSuitValue = floor(${"player" . 1 . "hand"}[$i]/13);
-    if ((${"player" . 1 . "hand"}[$i]/13) == floor(${"player" . 1 . "hand"}[$i]/13)) {
-        $cardSuitValue = $cardSuitValue - 1;
+    for ($i = 0; $i < count($currentPlayer); $i++) {
+      $cardValue = $currentPlayer[$i] % 13;
+      if($cardValue==0){
+          $cardValue = 13;
+      }
+      $score = $score + $cardValue;
     }
-    
-    $cardSuit = $suits[$cardSuitValue];
-    
-    $cardValue = ${"player" . 1 . "hand"}[$i] % 13;
-    if($cardValue==0){
-        $cardValue = 13;
+    return $score;
+}
+
+function get_winner() {
+  $playerArray = array("1" => get_score(1),
+                        "2" => get_score(2),
+                        "3" => get_score(3),
+                        "4" => get_score(4));
+  asort($playerArray);
+  $playerArray = array_reverse($playerArray, true);
+  var_dump($playerArray);
+  $winnerKey = array();
+  
+
+  foreach ($playerArray as $key => $value){
+    if ($playerArray[$key] <= 42) {
+      // this is the winning score
+      $winnerScore = $playerArray[$key];
+      break;  
     }
-    echo "<img src=assets/cards/". $cardSuit . "/" . $cardValue . ".png>";
+  }
+  $winnerKey = array_keys($playerArray, $winnerScore);
+  var_dump($winnerKey);
 }
 
 
- ?>
+
+?>
  
  <!DOCTYPE html>
 <html>
@@ -61,7 +100,9 @@ for ($i = 0; $i < count(${"player" . 1 . "hand"}); $i++) {
         <title> </title>
     </head>
     <body>
-<?php
+<?php show_hand(1);
+      echo get_score(1);
+      get_winner();
 ?>
     </body>
 </html>
