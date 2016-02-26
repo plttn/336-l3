@@ -107,3 +107,4 @@ function get_winner() {
 ?>
     </body>
 </html>
+<!-- hidden inputs with values of $_POST(names)-->
