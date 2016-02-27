@@ -87,11 +87,7 @@ function get_winner() {
 }
 
 function get_image($imageNumber) {
-    //$playerImage= array ("/Labs/336-l3/assets/playerImages/cow.jpg","/Labs/336-l3/assets/playerImages/dog.jpg","/Labs/336-l3/assets/playerImages/goat.jpg", "/Labs/336-l3/assets/playerImages/hippo.jpg", "/Labs/336-l3/assets/playerImages/owl.jpg", "/Labs/336-l3/assets/playerImages/pig.jpg");
-    //shuffle($playerImage);
-    
     global $playerImage;
-    
     echo '<img src="' . $playerImage[$imageNumber] . '" alt="alt" style="width:72px;height:96px>"';
 };
 
@@ -115,32 +111,41 @@ function get_image($imageNumber) {
     show_hand(1);
     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
     echo get_score(1);
+    echo " points!";
     echo "<br />";
     
     get_image(1);
     show_hand(2);
     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
     echo get_score(2);
+    echo " points!";
     echo "<br />";
     
     get_image(2);
     show_hand(3);
     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
     echo get_score(3);
+    echo " points!";
     echo "<br />";
     
     get_image(3);
     show_hand(4);
     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
     echo get_score(4);
+    echo " points!";
     echo "<br />";
    
    // print the winners name
-   echo "Winner is player";
-    echo get_winner();
-  
-    
-?>
+    echo "Winner is player";
+   // echo get_winner();
+   ?>
+<!DOCTYPE html>
+<html>
+    <form action="index.php" method="POST">
+      <input type="Submit" name="Restart">
+    </form>
+</html>
+
     </body>
 </html>
 <!-- hidden inputs with values of $_POST(names)-->
