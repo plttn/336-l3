@@ -14,16 +14,16 @@ for ($i = 1; $i <= 52; $i++ ) {
 }
 //print_r($deck);
 shuffle($deck);
-for ($i = 1; $i <= rand(4,6); $i++) {
+for ($i = 0; $i <= rand(4,6); $i++) {
   $player1hand[] = array_pop($deck);
 }
-for ($i = 1; $i <= rand(4,6); $i++) {
+for ($i = 0; $i <= rand(4,6); $i++) {
   $player2hand[] = array_pop($deck);
 }
-for ($i = 1; $i <= rand(4,6); $i++) {
+for ($i = 0; $i <= rand(4,6); $i++) {
   $player3hand[] = array_pop($deck);
 }
-for ($i = 1; $i <= rand(4,6); $i++) {
+for ($i = 0; $i <= rand(4,6); $i++) {
   $player4hand[] = array_pop($deck);
 }
 function show_hand($playerNumber) {
