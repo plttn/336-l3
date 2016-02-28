@@ -9,6 +9,8 @@ $playerImage= array ("/Labs/336-l3/assets/playerImages/cow.jpg","/Labs/336-l3/as
 shuffle($playerImage);
 
 
+
+
 for ($i = 1; $i <= 52; $i++ ) {
   $deck[] = $i;
 }
@@ -65,10 +67,7 @@ function get_score($playerNumber){
     return $score;
 }
 function get_winner() {
-  $playerArray = array("1" => get_score(1),
-                        "2" => get_score(2),
-                        "3" => get_score(3),
-                        "4" => get_score(4));
+  $playerArray = array("1" => get_score(1), "2" => get_score(2), "3" => get_score(3), "4" => get_score(4));
   asort($playerArray);
   $playerArray = array_reverse($playerArray, true);
   var_dump($playerArray);
@@ -82,7 +81,7 @@ function get_winner() {
     }
   }
   $winnerKey = array_keys($playerArray, $winnerScore);
-  var_dump($winnerKey);
+  //var_dump($winnerKey);
    return $winnerKey;
 }
 
@@ -103,10 +102,6 @@ function get_image($imageNumber) {
     <body>
         <h1>Silverjack</h1>
 <?php 
-    //  show_hand(1);
-    //  echo get_score(1);
-    //  get_winner();
-    
     get_Image(0);
     show_hand(1);
     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -137,12 +132,14 @@ function get_image($imageNumber) {
    
    // print the winners name
     echo "Winner is player";
-   // echo get_winner();
+    echo get_winner();
+    //echo $playerArray[1]; //this does not print a value so the names are not being acessed
+    //
    ?>
 <!DOCTYPE html>
 <html>
     <form action="index.php" method="POST">
-      <input type="Submit" name="Restart">
+      <input type="Submit" name="Restart" value="Restart the Game">
     </form>
 </html>
 
