@@ -70,7 +70,6 @@ function get_winner() {
   $playerArray = array("1" => get_score(1), "2" => get_score(2), "3" => get_score(3), "4" => get_score(4));
   asort($playerArray);
   $playerArray = array_reverse($playerArray, true);
-  var_dump($playerArray);
   $winnerKey = array();
   
   foreach ($playerArray as $key => $value){
@@ -81,14 +80,23 @@ function get_winner() {
     }
   }
   $winnerKey = array_keys($playerArray, $winnerScore);
-  //var_dump($winnerKey);
-   return $winnerKey;
+  return $winnerKey;
 }
 
 function get_image($imageNumber) {
     global $playerImage;
     echo '<img src="' . $playerImage[$imageNumber] . '" alt="alt" style="width:72px;height:96px>"';
 };
+
+function build_player_array(){
+  $array = array();
+  array_push($array, $_POST["p1"]);
+  array_push($array, $_POST["p2"]);
+  array_push($array, $_POST["p3"]);
+  array_push($array, $_POST["p4"]);
+  return $array;
+  
+}
 
 ?>
  
@@ -101,7 +109,10 @@ function get_image($imageNumber) {
     </head>
     <body>
         <h1>Silverjack</h1>
-<?php 
+<?php
+    $playerNameArray = build_player_array();
+    
+    echo $playerNameArray[0], " ";
     get_Image(0);
     show_hand(1);
     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -109,6 +120,7 @@ function get_image($imageNumber) {
     echo " points!";
     echo "<br />";
     
+    echo $playerNameArray[1], " ";
     get_image(1);
     show_hand(2);
     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -116,6 +128,7 @@ function get_image($imageNumber) {
     echo " points!";
     echo "<br />";
     
+    echo $playerNameArray[2], " ";
     get_image(2);
     show_hand(3);
     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -123,6 +136,7 @@ function get_image($imageNumber) {
     echo " points!";
     echo "<br />";
     
+    echo $playerNameArray[3], " ";
     get_image(3);
     show_hand(4);
     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -131,10 +145,11 @@ function get_image($imageNumber) {
     echo "<br />";
    
    // print the winners name
-    echo "Winner is player";
-    echo get_winner();
-    //echo $playerArray[1]; //this does not print a value so the names are not being acessed
-    //
+   echo "Winner is player ";
+    $winnerArray = get_winner();
+    foreach ($winnerArray as $value) {
+      echo $playerNameArray[$value-1];
+    }
    ?>
 <!DOCTYPE html>
 <html>
