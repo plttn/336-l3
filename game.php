@@ -5,7 +5,7 @@ $player3hand = array();
 $player4hand = array();
 $deck = array();
 //trying the following line
-$playerImage= array ("/Labs/336-l3/assets/playerImages/cow.jpg","/Labs/336-l3/assets/playerImages/dog.jpg","/Labs/336-l3/assets/playerImages/goat.jpg", "/Labs/336-l3/assets/playerImages/hippo.jpg", "/Labs/336-l3/assets/playerImages/owl.jpg", "/Labs/336-l3/assets/playerImages/pig.jpg");
+$playerImage= array ("assets/playerImages/cow.jpg","assets/playerImages/dog.jpg","assets/playerImages/goat.jpg", "assets/playerImages/hippo.jpg", "assets/playerImages/owl.jpg", "assets/playerImages/pig.jpg");
 shuffle($playerImage);
 
 
